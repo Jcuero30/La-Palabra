@@ -1,0 +1,32 @@
+<h1 style="text-align: center;">LA PALABRA DEL DIA</h1>
+
+<div class="PRINCIPAL">
+  <div class="tiles">
+    <ng-container *ngFor="let item of cajas">
+      <div class="columnas">
+        <ng-container *ngFor="let innerItem of item">
+          <div class="celdas"
+            [ngClass]="{'grey': innerItem.class === 'grey', 'yellow': innerItem.class === 'yellow','green': innerItem.class === 'green', 'rotate-in-x': innerItem.rotateAnimation}">
+            {{ innerItem.key }}</div>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+  <div class="TECLADO">
+    <ng-container *ngFor="let item of TECLADO">
+      <ng-container *ngIf="(item.key!=='ENVIAR')&&(item.key!=='BORRAR')">
+        <button (click)="handleChange(item.key)"
+          [ngClass]="{'grey': getClassForKey(item.key) === 'grey', 'yellow': getClassForKey(item.key) === 'yellow', 'green': getClassForKey(item.key) === 'green'}">{{item.key}}</button>
+      </ng-container>
+      <ng-container *ngIf="item.key==='ENVIAR'">
+        <button (click)="handleChange(item.key)" style="width: 65px;">{{item.key}}</button>
+      </ng-container>
+      <ng-container *ngIf="item.key==='BORRAR'">
+        <button (click)="handleChange(item.key)" style="width: 75px;">{{item.key}}</button>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+
+
+
