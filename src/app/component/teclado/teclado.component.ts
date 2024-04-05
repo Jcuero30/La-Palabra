@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  selector: 'app-teclado',
+  templateUrl: './teclado.component.html',
+  styleUrls: ['./teclado.component.sass']
 })
-export class AppComponent {
-  palabras = ['BARCO','CANTA','AUDIO','ROMEO', 'LUCIO', 'CARRO', 'DEBER']; 
+export class TecladoComponent {
+
+    palabras = ['BARCO','CANTA','AUDIO','ROMEO', 'LUCIO', 'CARRO', 'DEBER']; 
 
   Resultado: string = '';
 

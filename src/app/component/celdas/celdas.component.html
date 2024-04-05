@@ -1,0 +1,13 @@
+<app-teclado></app-teclado>
+<div class="PRINCIPAL">
+    <div class="tiles">
+        <ng-container *ngFor="let item of cajas">
+          <div class="columnas">
+            <ng-container *ngFor="let innerItem of item">
+              <div class="celdas"
+                [ngClass]="{'grey': innerItem.class === 'grey', 'yellow': innerItem.class === 'yellow','green': innerItem.class === 'green', 'rotate-in-x': innerItem.rotateAnimation}">
+                {{ innerItem.key }}</div>
+        </ng-container>
+     </div>
+      </ng-container>
+ </div>

@@ -1,0 +1,19 @@
+
+<div class="TECLADO">
+    <ng-container *ngFor="let item of TECLADO">
+      <ng-container *ngIf="(item.key!=='ENVIAR')&&(item.key!=='BORRAR')">
+        <button (click)="handleChange(item.key)"
+          [ngClass]="{'grey': getClassForKey(item.key) === 'grey', 'yellow': getClassForKey(item.key) === 'yellow', 'green': getClassForKey(item.key) === 'green'}">{{item.key}}</button>
+      </ng-container>
+      <ng-container *ngIf="item.key==='ENVIAR'">
+        <button (click)="handleChange(item.key)" style="width: 65px;">{{item.key}}</button>
+      </ng-container>
+      <ng-container *ngIf="item.key==='BORRAR'">
+        <button (click)="handleChange(item.key)" style="width: 75px;">{{item.key}}</button>
+      </ng-container>
+    </ng-container>
+  </div>
+
+
+
+
